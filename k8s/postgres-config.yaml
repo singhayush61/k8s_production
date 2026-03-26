@@ -21,6 +21,10 @@ spec:
         image: postgres
         ports:
         - containerPort: 5432
+        volumeMounts:
+        - name: postgres-storage
+          mountPath: /var/lib/postgresql/data
+          subPath: postgres
         env:
         - name: POSTGRES_USER 
           value: "admin"
@@ -28,10 +32,7 @@ spec:
           value: "password"
         - name: POSTGRES_DB
           value: "mydatabase"
-        volumeMounts:
-        - name: postgres-storage
-          mountPath: /var/lib/postgresql/data
-          subPath: postgres
+        
 ---
 apiVersion: v1
 kind: Service

@@ -27,11 +27,11 @@ spec:
           subPath: postgres
         env:
         - name: POSTGRES_USER 
-          value: "admin"
+          value: "postgres"
         - name: POSTGRES_PASSWORD
           value: "password"
         - name: POSTGRES_DB
-          value: "mydatabase"
+          value: "postgres"
         
 ---
 apiVersion: v1

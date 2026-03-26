@@ -20,13 +20,13 @@ spec:
       - name: postgres
         image: postgres
         ports:
-        - containerPort: 5432
+        - containerPort: "5432"
         volumeMounts:
         - name: postgres-storage
           mountPath: /var/lib/postgresql/data
           subPath: postgres
         env:
-        - name: PGPASSWORD
+        - name: POSTGRES_PASSWORD
           valueFrom:
             secretKeyRef:
               name: pgpassword
